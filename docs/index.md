@@ -13,7 +13,7 @@ Modular LEGO-mounted environmental sensor carriers, low-power E-Paper smart cloc
 </div>
 </div>
 
-![3D Render of Rev 3 Sensor Carrier Board with 2.13" E-Paper display](pics/3d-front-2-13.png){ loading=lazy }
+![E-Paper Smart Clock & Environmental Sensor](pics/eink.jpg){ loading=lazy }
 
 <div class="grid cards" markdown>
 
