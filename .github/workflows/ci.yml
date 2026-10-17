@@ -29,22 +29,20 @@ jobs:
         uses: astral-sh/setup-uv@v5
         with:
           version: "latest"
+          enable-cache: true
+          cache-dependency-glob: "requirements.txt"
 
       - name: Set up Python
         run: uv python install 3.12
 
-      - name: Install dependencies
-        run: uv pip install --system -r requirements.txt
-
       - name: Build MkDocs site
-        run: uv run --system mkdocs build --clean --strict
+        run: uv run --python 3.12 --with-requirements requirements.txt mkdocs build --strict --verbose
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./public
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
-
+        uses: actions/deploy-pages@v5
