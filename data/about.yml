@@ -1,0 +1,29 @@
+enable: true
+title: Project Overview
+subtitle: Open-source modular IoT ecosystem, ESPHome fleet, and Home Assistant automation
+file: about.md
+stats:
+  - label: Active Fleet Nodes
+    count: "41"
+    icon: bi-broadcast-pin
+    color: "#57cbcc"
+  - label: Sensor Board Revs
+    count: "3"
+    icon: bi-motherboard
+    color: "#6cb670"
+  - label: Blueprints & Automations
+    count: "10"
+    icon: bi-house-gear
+    color: "#fbbf24"
+  - label: Open Source HW & FW
+    count: 100%
+    icon: bi-code-slash
+    color: "#818cf8"
+manifesto:
+  what_it_is:
+    - Custom KiCad carrier boards designed specifically for standard LEGO plates (12×6 and 8×6 grids).
+    - Ambient-aware e-paper displays (1.54", 2.13", 2.9", 4.2", 5.65") with partial refresh (<0.3s) and nighttime sleep.
+    - Accurate indoor climate telemetry (Bosch BME280/680, Sensirion SGP30/40 VOC, TEMT6000 ambient lux).
+    - Robust 41-node ESPHome fleet running on ESP32-C3, C6, S3, ESP8266, and ESP8285 with zero cloud lock-in.
+  what_it_is_not: >-
+    This ecosystem is built entirely on local processing and open standards, rejecting proprietary walled gardens and closed clouds. Hardware and firmware are modular, repairable, and customizable down to every trace and line of YAML.

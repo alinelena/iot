@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <!-- Subpage Header -->
+  <header class="py-5 border-bottom border-secondary border-opacity-25" style="background: linear-gradient(180deg, #161c24 0%, #0f1318 100%);">
+    <div class="container pt-4">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-2 small">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-info">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{ parent_url }}" class="text-decoration-none text-info">{{ parent_title }}</a></li>
+          <li class="breadcrumb-item active text-secondary" aria-current="page">{{ item.title }}</li>
+        </ol>
+      </nav>
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-2">
+        <div>
+          <h1 class="h2 text-white fw-bold mb-2" style="font-family: 'Anaheim', sans-serif;">{{ item.title }}</h1>
+          <div class="d-flex flex-wrap gap-2 align-items-center">
+            {% if item.badge %}
+            <span class="mlego-badge" style="color: {{ accent_color }}; border-color: {{ accent_color }}55;">{{ item.badge }}</span>
+            {% endif %}
+            {% if item.mcu %}
+            <span class="badge bg-dark text-info border border-info border-opacity-25"><i class="bi bi-cpu me-1"></i>{{ item.mcu }}</span>
+            {% endif %}
+            {% if item.firmware %}
+            <span class="badge bg-dark text-success border border-success border-opacity-25"><i class="bi bi-code-slash me-1"></i>{{ item.firmware }}</span>
+            {% endif %}
+          </div>
+        </div>
+        <div>
+          <a href="{{ parent_url }}" class="btn btn-sm btn-ddmms-outline text-decoration-none">
+            <i class="bi bi-arrow-left me-1"></i> All {{ parent_title }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Sibling Navigation Bar -->
+  {% if siblings and siblings|length > 1 %}
+  <nav class="subpage-nav-bar" aria-label="Sibling models navigation">
+    <div class="container">
+      <div class="subpage-nav-scroller">
+        <a href="{{ parent_url }}" class="subnav-pill subnav-pill-parent">
+          <i class="bi bi-grid-fill me-1"></i> All {{ parent_title }}
+        </a>
+        {% for sib in siblings %}
+        <a href="{{ sib.id }}.html" class="subnav-pill{% if sib.id == item.id %} active{% endif %}" style="--pill-color: {{ sib.color }};">
+          <span class="subnav-pill-title">{{ sib.chip_title or sib.title.split('(')[0].strip() }}</span>
+          {% if sib.chip_badge or sib.badge %}
+          <span class="subnav-pill-badge">{{ sib.chip_badge or sib.badge }}</span>
+          {% endif %}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </nav>
+  {% endif %}
+
+  <main class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <div class="surface-card p-4 p-md-5">
+            <div class="modal-article-body">
+              {{ html_content|safe }}
+
+              <!-- Previous / Next Sibling Navigation Pager -->
+              {% if prev_item or next_item %}
+              <div class="detail-pager-wrap pt-4 border-top border-secondary border-opacity-25 mt-5">
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    {% if prev_item %}
+                    <a href="{{ prev_item.id }}.html" class="detail-pager-card detail-pager-prev">
+                      <span class="pager-direction"><i class="bi bi-arrow-left"></i> Previous</span>
+                      <span class="pager-title">{{ prev_item.title }}</span>
+                    </a>
+                    {% endif %}
+                  </div>
+                  <div class="col-sm-6 text-sm-end">
+                    {% if next_item %}
+                    <a href="{{ next_item.id }}.html" class="detail-pager-card detail-pager-next">
+                      <span class="pager-direction">Next <i class="bi bi-arrow-right"></i></span>
+                      <span class="pager-title">{{ next_item.title }}</span>
+                    </a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="sticky-top" style="top: 5rem;">
+            <div class="surface-card p-4 mb-4">
+              <div class="hardware-card-thumb-wrap mb-3 rounded" style="height: 200px;">
+                <img src="{{ item.image or 'pics/mlego.webp' }}" alt="{{ item.title }}" class="hardware-card-thumb" style="cursor: zoom-in;" onclick="openLightbox('{{ item.image or 'pics/mlego.webp' }}')">
+              </div>
+              <h3 class="h5 text-white mb-3" style="font-family: 'Anaheim', sans-serif;">Quick Specs</h3>
+              <ul class="list-unstyled small text-secondary mb-3" style="line-height: 2;">
+                {% if item.badge %}
+                <li><strong class="text-white">Classification:</strong> {{ item.badge }}</li>
+                {% endif %}
+                {% if item.mcu %}
+                <li><strong class="text-white">Microcontroller:</strong> {{ item.mcu }}</li>
+                {% endif %}
+                {% if item.firmware %}
+                <li><strong class="text-white">Firmware:</strong> {{ item.firmware }}</li>
+                {% endif %}
+              </ul>
+              {% if item.summary %}
+              <p class="small text-secondary mb-3">{{ item.summary }}</p>
+              {% endif %}
+              <div class="d-grid gap-2">
+                <a href="https://gitlab.com/48broadbent" target="_blank" rel="noopener" class="btn btn-sm btn-ddmms-primary text-center text-decoration-none">
+                  <i class="bi bi-git me-1"></i> View GitLab Fleet
+                </a>
+                <a href="{{ parent_url }}" class="btn btn-sm btn-ddmms-outline text-center text-decoration-none">
+                  <i class="bi bi-grid me-1"></i> Browse All {{ parent_title }}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}

@@ -1,0 +1,23 @@
+items:
+  - id: homeassistant-overview
+    file: homeassistant-overview.md
+    title: Central Home Assistant Server & Dashboards
+    badge: Core Hub
+    chip_badge: HA Hub
+    chip_title: HA Hub
+    color: "#38bdf8"
+    mcu: Local Hub
+    firmware: Home Assistant OS
+    image: pics/mlego.webp
+    summary: "Hub architecture, encrypted native ESPHome stream, Mosquitto MQTT broker, long-term climate statistics, and mobile notifications."
+  - id: blueprints
+    file: blueprints.md
+    title: Production Automation Blueprints
+    badge: 10 Blueprints
+    chip_badge: Blueprints
+    chip_title: HA Blueprints
+    color: "#6366f1"
+    mcu: Automations
+    firmware: HA Blueprint YAML
+    image: pics/alin.webp
+    summary: "Curated blueprints from 48broadbent/ha-blueprints: humidity fan extraction, ambient lux motion lighting, night mode, and IKEA remotes."

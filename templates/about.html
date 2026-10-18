@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <header class="py-5 border-bottom border-secondary border-opacity-25" style="background: linear-gradient(180deg, #161c24 0%, #0f1318 100%);">
+    <div class="container pt-4">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-2 small">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-info">Home</a></li>
+          <li class="breadcrumb-item active text-secondary" aria-current="page">About Project</li>
+        </ol>
+      </nav>
+      <div class="section-header text-start mb-0" style="--section-accent: #2dd4bf;">
+        <h1 class="h2 text-white fw-bold mb-2" style="font-family: 'Anaheim', sans-serif;">
+          <span style="color: #2dd4bf;">Project</span> Overview &amp; Architecture
+        </h1>
+        <p class="text-secondary mb-0">Open-source modular hardware, ESPHome edge fleet, and Home Assistant automation</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="py-5">
+    <div class="container">
+      <div class="surface-card p-4 p-md-5">
+        <div class="modal-article-body">
+          {{ html_content|safe }}
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}

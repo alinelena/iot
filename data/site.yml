@@ -1,0 +1,87 @@
+title: iot
+description: Modular LEGO-mounted environmental sensor carriers, low-power E-Paper smart clocks, ESPHome fleet firmware, and coordinated Home Assistant automations
+author: Alin M. Elena
+base_url: https://iot.elena.re
+logo: pics/mlego.webp
+logo_webp: pics/mlego.webp
+favicon: pics/mlego.webp
+banner:
+  enable: true
+  bg_image_webp: pics/eink.jpg
+  bg_image: pics/eink.jpg
+  title: Open IoT Notes
+  subtitle: Modular LEGO Sensors • ESPHome Fleet • Home Assistant Automations
+menu:
+  - name: Home
+    url: '#hero'
+    icon: bi-house-door
+    color: '#57cbcc'
+  - name: About
+    url: '#about'
+    icon: bi-info-circle
+    color: '#2dd4bf'
+  - name: Hardware
+    url: '#hardware'
+    icon: bi-cpu
+    color: '#6cb670'
+  - name: ESPHome
+    url: '#esphome'
+    icon: bi-broadcast-pin
+    color: '#fbbf24'
+  - name: Home Assistant
+    url: '#homeassistant'
+    icon: bi-house-gear
+    color: '#38bdf8'
+  - name: Guides
+    url: '#guides'
+    icon: bi-journal-code
+    color: '#f472b6'
+  - name: Specs
+    url: '#specs'
+    icon: bi-table
+    color: '#fb923c'
+dividers:
+  after_hero:
+    bg_image_webp: pics/pcb-rev-3.png
+    bg_image: pics/pcb-rev-3.png
+  after_about:
+    bg_image_webp: pics/3d-front-2-13.png
+    bg_image: pics/3d-front-2-13.png
+  after_hardware:
+    bg_image_webp: pics/3d-front-1-54.png
+    bg_image: pics/3d-front-1-54.png
+  after_esphome:
+    bg_image_webp: pics/pcb-3d-front.png
+    bg_image: pics/pcb-3d-front.png
+  after_homeassistant:
+    bg_image_webp: pics/schematic-rev3.svg
+    bg_image: pics/schematic-rev3.svg
+  after_guides:
+    bg_image_webp: pics/eink.jpg
+    bg_image: pics/eink.jpg
+  after_specs:
+    bg_image_webp: pics/pcb-3d-back.png
+    bg_image: pics/pcb-3d-back.png
+social:
+  - name: GitLab Fleet
+    icon: bi-git
+    url: https://gitlab.com/48broadbent/broadbent
+    color: '#fc6d26'
+  - name: Sensor Hardware
+    icon: bi-motherboard
+    url: https://gitlab.com/m-lego/sensor
+    color: '#6cb670'
+  - name: GitHub
+    icon: bi-github
+    url: https://github.com/alinelena/iot
+    color: '#c9d1d9'
+  - name: Alin's Site
+    icon: pics/alin.webp
+    image: pics/alin.webp
+    url: https://alin.elena.re
+    color: '#57cbcc'
+  - name: DDMMS
+    icon: bi-building
+    url: https://ddmms.elena.re
+    color: '#48b2b3'
+copyright: Copyright © 2024–2026 Alin M. Elena. All rights reserved.

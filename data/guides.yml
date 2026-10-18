@@ -1,0 +1,34 @@
+items:
+  - id: assembly
+    file: assembly.md
+    title: Hardware Assembly & Soldering Guide
+    badge: Soldering Guide
+    chip_badge: Assembly
+    chip_title: Assembly Guide
+    color: "#f472b6"
+    mcu: SMD & THT
+    firmware: Hardware Assembly
+    image: pics/pcb-front.png
+    summary: Complete soldering instructions, component placement for revision 3, header socket installation, and display ribbon handling.
+  - id: pinouts
+    file: pinouts.md
+    title: Hardware Pinout Tables & Bus Mapping
+    badge: Pinout Matrix
+    chip_badge: Pinouts
+    chip_title: Pinout Tables
+    color: "#ec4899"
+    mcu: C3 & C6 SuperMini
+    firmware: SPI / I2C / ADC
+    image: pics/pcb-rev3.svg
+    summary: Complete pin-to-GPIO reference tables for ESP32-C3 SuperMini, ESP32-C6 SuperMini, e-paper display ribbons, and auxiliary sensors.
+  - id: flashing-ota
+    file: flashing-ota.md
+    title: Flashing & Fleet OTA Deployment
+    badge: Flashing & OTA
+    chip_badge: OTA Guide
+    chip_title: Flashing & OTA
+    color: "#e11d48"
+    mcu: esphome run / OTA
+    firmware: Web Serial & Encrypted OTA
+    image: pics/pcb-rev-3.png
+    summary: Initial USB-C flashing workflows, Web Serial browser console, and automated wireless OTA deployment across 41 production nodes.

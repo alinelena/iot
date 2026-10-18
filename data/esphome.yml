@@ -1,0 +1,34 @@
+items:
+  - id: nodes
+    file: nodes.md
+    title: ESPHome 41-Node Fleet Catalog
+    badge: 41 Fleet Nodes
+    chip_badge: 41 Nodes
+    chip_title: Node Fleet
+    color: "#fbbf24"
+    mcu: ESP32 / ESP8266 / S3
+    firmware: ESPHome Native API
+    image: pics/pcb-3d-front.png
+    summary: Production inventory of 41 nodes across all rooms—celestial and Malebranche naming scheme, climate sensors, e-paper clocks, and PM2.5 monitors.
+  - id: epaper-guide
+    file: epaper-guide.md
+    title: Low-Power E-Paper & Refresh Drivers
+    badge: E-Paper Driver
+    chip_badge: E-Paper
+    chip_title: E-Paper Guide
+    color: "#38bdf8"
+    mcu: SSD1680 / SSD1681 / GDEY042
+    firmware: Waveshare / WeAct
+    image: pics/eink.jpg
+    summary: Deep dive into partial refresh algorithms (<0.3s), ghosting mitigation, dynamic nighttime sleep gating, and font rendering in ESPHome.
+  - id: firmware-examples
+    file: firmware-examples.md
+    title: Production ESPHome YAML Configurations
+    badge: YAML Configs
+    chip_badge: YAML Examples
+    chip_title: Firmware Configs
+    color: "#a855f7"
+    mcu: ESP32-C3 & ESP32-C6
+    firmware: ESPHome Production
+    image: pics/schematic-rev3.svg
+    summary: Battle-tested ESPHome configurations with encrypted API, SNTP time synchronization, deep sleep, and failover captive portal.

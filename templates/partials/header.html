@@ -1,0 +1,151 @@
+<!-- Floating Corner Navigation Menu matching alin.elena.re -->
+<nav class="corner-nav-wrapper" aria-label="Site navigation">
+  <button
+    type="button"
+    id="corner-menu-toggle"
+    class="corner-menu-btn"
+    aria-expanded="false"
+    aria-controls="corner-menu-panel"
+    aria-label="Toggle navigation menu"
+  >
+    <img id="corner-btn-logo" src="pics/mlego.webp" alt="Open IoT" class="brand-avatar">
+    <span id="corner-current-section">Menu</span>
+    <span class="menu-icon-bars" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  </button>
+
+  <div id="corner-menu-panel" class="corner-menu-panel" role="menu">
+    <div class="d-flex align-items-center justify-content-between px-2 pb-2 mb-2 border-bottom border-secondary border-opacity-25">
+      <span class="fw-bold text-white small text-uppercase" style="letter-spacing: 0.06em;">IoT Navigation</span>
+      <span class="badge bg-dark text-info border border-info border-opacity-25">iot.elena.re</span>
+    </div>
+    <ul id="corner-nav-list" class="corner-nav-list">
+      <li>
+        <a href="index.html" class="corner-nav-link{% if active_page == 'home' %} active{% endif %}" style="--nav-item-color: #57cbcc;">
+          <i class="bi bi-house-door"></i> Home
+        </a>
+      </li>
+      <li>
+        <a href="about.html" class="corner-nav-link{% if active_page == 'about' %} active{% endif %}" style="--nav-item-color: #2dd4bf;">
+          <i class="bi bi-info-circle"></i> About
+        </a>
+      </li>
+
+      <!-- Hardware Category & Subnav Chips -->
+      <li class="corner-nav-group{% if active_group == 'hardware' %} group-active{% endif %}">
+        <div class="corner-nav-group-header" style="--nav-item-color: #6cb670;">
+          <a href="hardware.html" class="corner-nav-link corner-nav-group-title{% if active_page == 'hardware' %} active{% endif %}">
+            <i class="bi bi-cpu"></i> Hardware Carriers
+          </a>
+          <button type="button" class="corner-nav-group-toggle-btn" aria-expanded="{% if active_group == 'hardware' %}true{% else %}false{% endif %}" aria-label="Toggle Hardware Submenu">
+            <i class="bi bi-chevron-down"></i>
+          </button>
+        </div>
+        <div class="corner-subnav-panel{% if active_group == 'hardware' %} show{% endif %}">
+          <div class="corner-subnav-grid">
+            {% for h in hardware_items %}
+            <a href="{{ h.id }}.html" class="corner-subnav-chip{% if active_page == h.id %} active{% endif %}" style="--chip-accent: {{ h.color }};">
+              <span class="chip-name">{{ h.chip_title or h.title.split('(')[0].strip() }}</span>
+              <span class="chip-badge">{{ h.chip_badge or h.badge }}</span>
+            </a>
+            {% endfor %}
+          </div>
+          <div class="text-end pt-2">
+            <a href="hardware.html" class="corner-subnav-all-link">Browse All Hardware <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </li>
+
+      <!-- ESPHome Category & Subnav Chips -->
+      <li class="corner-nav-group{% if active_group == 'esphome' %} group-active{% endif %}">
+        <div class="corner-nav-group-header" style="--nav-item-color: #fbbf24;">
+          <a href="esphome.html" class="corner-nav-link corner-nav-group-title{% if active_page == 'esphome' %} active{% endif %}">
+            <i class="bi bi-broadcast-pin"></i> ESPHome Fleet
+          </a>
+          <button type="button" class="corner-nav-group-toggle-btn" aria-expanded="{% if active_group == 'esphome' %}true{% else %}false{% endif %}" aria-label="Toggle ESPHome Submenu">
+            <i class="bi bi-chevron-down"></i>
+          </button>
+        </div>
+        <div class="corner-subnav-panel{% if active_group == 'esphome' %} show{% endif %}">
+          <div class="corner-subnav-grid">
+            {% for e in esphome_items %}
+            <a href="{{ e.id }}.html" class="corner-subnav-chip{% if active_page == e.id %} active{% endif %}" style="--chip-accent: {{ e.color }};">
+              <span class="chip-name">{{ e.chip_title or e.title.split('(')[0].strip() }}</span>
+              <span class="chip-badge">{{ e.chip_badge or e.badge }}</span>
+            </a>
+            {% endfor %}
+          </div>
+          <div class="text-end pt-2">
+            <a href="esphome.html" class="corner-subnav-all-link">Browse All ESPHome <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Home Assistant Category & Subnav Chips -->
+      <li class="corner-nav-group{% if active_group == 'homeassistant' %} group-active{% endif %}">
+        <div class="corner-nav-group-header" style="--nav-item-color: #38bdf8;">
+          <a href="homeassistant.html" class="corner-nav-link corner-nav-group-title{% if active_page == 'homeassistant' %} active{% endif %}">
+            <i class="bi bi-house-gear"></i> Home Assistant
+          </a>
+          <button type="button" class="corner-nav-group-toggle-btn" aria-expanded="{% if active_group == 'homeassistant' %}true{% else %}false{% endif %}" aria-label="Toggle Home Assistant Submenu">
+            <i class="bi bi-chevron-down"></i>
+          </button>
+        </div>
+        <div class="corner-subnav-panel{% if active_group == 'homeassistant' %} show{% endif %}">
+          <div class="corner-subnav-grid">
+            {% for ha in homeassistant_items %}
+            <a href="{{ ha.id }}.html" class="corner-subnav-chip{% if active_page == ha.id %} active{% endif %}" style="--chip-accent: {{ ha.color }};">
+              <span class="chip-name">{{ ha.chip_title or ha.title.split('(')[0].strip() }}</span>
+              <span class="chip-badge">{{ ha.chip_badge or ha.badge }}</span>
+            </a>
+            {% endfor %}
+          </div>
+          <div class="text-end pt-2">
+            <a href="homeassistant.html" class="corner-subnav-all-link">Browse All Home Assistant <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Guides Category & Subnav Chips -->
+      <li class="corner-nav-group{% if active_group == 'guides' %} group-active{% endif %}">
+        <div class="corner-nav-group-header" style="--nav-item-color: #f472b6;">
+          <a href="guides.html" class="corner-nav-link corner-nav-group-title{% if active_page == 'guides' %} active{% endif %}">
+            <i class="bi bi-journal-code"></i> Build Guides
+          </a>
+          <button type="button" class="corner-nav-group-toggle-btn" aria-expanded="{% if active_group == 'guides' %}true{% else %}false{% endif %}" aria-label="Toggle Guides Submenu">
+            <i class="bi bi-chevron-down"></i>
+          </button>
+        </div>
+        <div class="corner-subnav-panel{% if active_group == 'guides' %} show{% endif %}">
+          <div class="corner-subnav-grid">
+            {% for g in guides_items %}
+            <a href="{{ g.id }}.html" class="corner-subnav-chip{% if active_page == g.id %} active{% endif %}" style="--chip-accent: {{ g.color }};">
+              <span class="chip-name">{{ g.chip_title or g.title.split('(')[0].strip() }}</span>
+              <span class="chip-badge">{{ g.chip_badge or g.badge }}</span>
+            </a>
+            {% endfor %}
+          </div>
+          <div class="text-end pt-2">
+            <a href="guides.html" class="corner-subnav-all-link">Browse All {{ guides_items|length }} Guides <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Specs Table Direct Link -->
+      <li>
+        <a href="specs.html" class="corner-nav-link{% if active_page == 'specs' %} active{% endif %}" style="--nav-item-color: #fb923c;">
+          <i class="bi bi-table"></i> Lineup Specs
+        </a>
+      </li>
+
+      <li class="border-top border-secondary border-opacity-25 pt-2 mt-1">
+        <a href="https://alin.elena.re" target="_blank" rel="noopener" class="corner-nav-link" style="--nav-item-color: #57cbcc;">
+          <img src="pics/alin.webp" alt="alin.elena.re" class="rounded-circle" style="width: 1.15rem; height: 1.15rem; object-fit: cover;"> Alin's Main Site
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

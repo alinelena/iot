@@ -1,0 +1,93 @@
+columns:
+  - id: name
+    title: Hardware Model / Node
+  - id: layout
+    title: Form Factor & Grid
+  - id: mcu
+    title: Microcontroller
+  - id: display
+    title: Display Interface
+  - id: sensors
+    title: Supported Sensors & Telemetry
+  - id: power
+    title: Power & Connectivity
+  - id: firmware
+    title: Firmware Engine
+
+items:
+  - id: sensor-12x6
+    name: 12×6 Sensor Carrier (Rev 3)
+    layout: 12×6 LEGO Baseplate
+    keys: 12×6 Grid
+    mcu: ESP32-C3 SuperMini (RISC-V 160MHz)
+    display: 2.13" or 1.54" SPI E-Paper (WeAct/Waveshare)
+    sensors: BME280/BME680, SGP30/SGP40 VOC, TEMT6000 Lux
+    features: Dual SPI display sockets, jumper voltage selection, LEGO stud pitch holes
+    power: USB-C 5V / 3.3V LDO
+    firmware: ESPHome Native API
+
+  - id: sensor-1.54
+    name: 8×6 Mini Sensor Carrier
+    layout: 8×6 LEGO Baseplate
+    keys: 8×6 Grid
+    mcu: ESP32-C6 SuperMini (RISC-V 160MHz)
+    display: 1.54" SPI E-Paper (200×200 SSD1681)
+    sensors: BME680 SPI, TEMT6000 Analog Lux
+    features: Ultra-compact footprint, Wi-Fi 6 / Thread / Zigbee capable SoC
+    power: USB-C 5V / 3.3V LDO
+    firmware: ESPHome Native API
+
+  - id: nodes
+    name: E-Paper Clock Node (Pluto / Venus)
+    layout: Desk Stand LEGO Enclosure
+    keys: Living / Desk
+    mcu: ESP32-C3 SuperMini
+    display: 2.13" Black/White Partial Refresh (<0.3s)
+    sensors: BME280 (Temp, Humidity, Pressure), TEMT6000
+    features: Nighttime refresh pause (Lux <= 1.0), SNTP auto-sync, 5-min update
+    power: Continuous USB-C 5V
+    firmware: ESPHome Native API
+
+  - id: nodes
+    name: Multi-Room Climate Node (Jupiter / Saturn)
+    layout: Wall Mount LEGO Case
+    keys: Rooms / Hall
+    mcu: ESP32-C3 SuperMini
+    display: Optional 1.54" Status EPD
+    sensors: BME680 (Temp, Hum, Pressure, Gas/VOC), TEMT6000
+    features: SGP40 VOC index algorithm, mDNS auto-discovery in Home Assistant
+    power: Micro-USB / USB-C
+    firmware: ESPHome Native API
+
+  - id: nodes
+    name: PM2.5 Air Quality Node (Saturn)
+    layout: Enclosed Airflow Case
+    keys: Ventilation
+    mcu: ESP32 / ESP8266
+    display: LED Indicator / Home Assistant
+    sensors: Plantower PMS5003 / SDS011 UART Laser Dust
+    features: Real-time PM1.0, PM2.5, PM10 mass concentration readings
+    power: 5V 1A Dedicated Rail
+    firmware: ESPHome Native API
+
+  - id: nodes
+    name: Holiday Lighting Node (Spruce / Mistletoe)
+    layout: Miniature Case
+    keys: Lighting
+    mcu: SP501E / ESP8285
+    display: WS2812B / SK6812 Addressable LED
+    sensors: Digital GPIO bitbang
+    features: Dynamic effects, palette animations, fast color temperature transitions
+    power: 5V 2A-5A External PSU
+    firmware: ESPHome FastLED
+
+  - id: nodes
+    name: M5Stack Atom Matrix Node
+    layout: 24×24mm M5 Enclosure
+    keys: Matrix Node
+    mcu: ESP32-PICO-D4
+    display: 5×5 RGB LED Matrix & Inertial IMU (MPU6886)
+    sensors: Built-in Pushbutton, IMU Motion
+    features: Visual status beacon, doorbell chime alert, smart home mode indicator
+    power: USB-C 5V
+    firmware: ESPHome Native API

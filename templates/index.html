@@ -1,0 +1,287 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <!-- Hero / Landing Section -->
+  <header>
+    <section id="hero" class="hero-section parallax-window" data-parallax-speed="0.42">
+      <div class="parallax-bg" id="hero-parallax-bg" style="background-image: url('{{ site.banner.bg_image_webp or "pics/eink.jpg" }}');"></div>
+      <div id="hero-content" class="hero-content container">
+        <div class="hero-pulse-badge">
+          <img src="pics/mlego.webp" alt="Open IoT logo">
+        </div>
+        <h1 class="hero-title">Open IoT Notes</h1>
+        <p class="hero-subtitle">Modular LEGO Sensors <span class="hero-bullet">•</span> ESPHome Fleet <span class="hero-bullet">•</span> Home Assistant</p>
+        
+        <p class="text-secondary mt-3 mb-4 mx-auto" style="max-width: 680px; font-size: 1.05rem;">
+          Modular LEGO-mounted environmental sensor carriers, low-power E-Paper smart clocks, ESPHome edge firmware across 41 production nodes, and coordinated Home Assistant automations.
+        </p>
+
+        <!-- CTAs & Social Links -->
+        <div class="d-flex flex-wrap justify-content-center align-items-center gap-2 mb-4">
+          <a href="hardware.html" class="btn-ddmms-primary text-decoration-none">
+            <i class="bi bi-cpu"></i> Hardware Carriers
+          </a>
+          <a href="esphome.html" class="btn-ddmms-outline text-decoration-none">
+            <i class="bi bi-broadcast-pin"></i> 41 ESPHome Nodes
+          </a>
+          <a href="homeassistant.html" class="btn-ddmms-outline text-decoration-none">
+            <i class="bi bi-house-gear"></i> Blueprints
+          </a>
+          <a href="https://gitlab.com/48broadbent" target="_blank" rel="noopener" class="btn-social-pill" style="--pill-color: #fc6d26;">
+            <i class="bi bi-git"></i> GitLab
+          </a>
+          <a href="https://github.com/alinelena/iot" target="_blank" rel="noopener" class="btn-social-pill" style="--pill-color: #c9d1d9;">
+            <i class="bi bi-github"></i> GitHub
+          </a>
+          <a href="https://alin.elena.re" target="_blank" rel="noopener" class="btn-social-pill" style="--pill-color: #57cbcc;">
+            <img src="pics/alin.webp" alt="alin.elena.re" class="rounded-circle" style="width: 1.15rem; height: 1.15rem; object-fit: cover; vertical-align: -2px;"> alin.elena.re
+          </a>
+        </div>
+
+        <div class="mt-4">
+          <a href="#about-overview" class="scroll-down-btn text-decoration-none">
+            <span>Discover</span>
+            <i class="bi bi-chevron-down"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <!-- About Overview -->
+    <section id="about-overview" class="section-block reveal-section">
+      <div class="container">
+        <div class="section-header" style="--section-accent: #2dd4bf;">
+          <h2 class="section-title">
+            <span class="section-title-highlight" style="color: #2dd4bf;">Project</span> <span class="text-white">Overview</span>
+          </h2>
+          <p class="text-secondary mb-2">Open-source, modular, 100% local smart home telemetry ecosystem</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="row g-4 mb-5">
+          {% for s in about.stats %}
+          <div class="col-6 col-lg-3">
+            <div class="stat-card">
+              <i class="bi {{ s.icon }} stat-icon" style="color: {{ s.color }};"></i>
+              <div class="stat-count">{{ s.count }}</div>
+              <div class="stat-label">{{ s.label }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="surface-card h-100">
+              <div class="card-icon-badge" style="background: rgba(108, 182, 112, 0.12); color: #6cb670; border-color: rgba(108, 182, 112, 0.3);">
+                <i class="bi bi-check-circle"></i>
+              </div>
+              <h3 class="h4 text-white mb-3">What This Ecosystem Is</h3>
+              <ul class="text-secondary ps-3 mb-0" style="line-height: 1.8;">
+                <li><strong class="text-light">Modular LEGO Carriers</strong> — Custom KiCad PCBs sized to LEGO stud pitch (12×6 and 8×6 grids with 4.8mm clearance).</li>
+                <li><strong class="text-light">Low-Power E-Paper Displays</strong> — Fast partial refresh (&lt;0.3s) for crisp desk clocks and ambient status without screen flicker.</li>
+                <li><strong class="text-light">Multi-Sensor Environmental Telemetry</strong> — Bosch BME280/680, Sensirion SGP30/40 VOC, and TEMT6000 ambient light sensors.</li>
+                <li><strong class="text-light">41 Production ESPHome Nodes</strong> — Running on ESP32-C3, ESP32-C6, ESP32-S3, ESP8266 with encrypted native API.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="surface-card h-100">
+              <div class="card-icon-badge" style="background: rgba(251, 146, 60, 0.12); color: #fb923c; border-color: rgba(251, 146, 60, 0.3);">
+                <i class="bi bi-lightbulb"></i>
+              </div>
+              <h3 class="h4 text-white mb-3">Design Philosophy</h3>
+              <p class="text-secondary" style="line-height: 1.75;">
+                Zero cloud lock-in. Everything operates 100% locally through ESPHome's encrypted native API and local MQTT brokers. Modular LEGO mounting allows instant prototyping, infinite color choices, wall mounts, and desk stands without brittle 3D-printed clips.
+              </p>
+              <div class="mt-auto pt-2">
+                <a href="about.html" class="btn btn-sm btn-ddmms-outline text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-1"></i> Read Architecture &amp; Manifesto
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parallax Divider 1 -->
+    <div class="parallax-band parallax-window" data-parallax-speed="0.38">
+      <div class="parallax-bg" style="background-image: url('{{ site.dividers.after_about.bg_image_webp or "pics/3d-front-2-13.png" }}');"></div>
+    </div>
+
+    <!-- Featured Hardware Carriers Preview -->
+    <section class="section-block section-bg-alt reveal-section">
+      <div class="container">
+        <div class="section-header" style="--section-accent: #6cb670;">
+          <h2 class="section-title">
+            <span class="section-title-highlight" style="color: #6cb670;">Custom</span> <span class="text-white">Hardware Carriers</span>
+          </h2>
+          <p class="text-secondary mb-2">KiCad-designed carrier boards sized for standard LEGO plate footprints</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="row">
+          {% for item in hardware['items'] %}
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="hardware-card">
+              <div class="hardware-card-thumb-wrap">
+                <a href="{{ item.id }}.html">
+                  <img src="{{ item.image }}" alt="{{ item.title }}" class="hardware-card-thumb" loading="lazy">
+                </a>
+              </div>
+              <div class="hardware-card-body">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="mlego-badge mlego-badge--green">{{ item.badge }}</span>
+                  {% if item.mcu %}
+                  <span class="badge bg-dark text-info border border-info border-opacity-25">{{ item.mcu }}</span>
+                  {% endif %}
+                </div>
+                <h3 class="h5 hardware-card-title mb-2">
+                  <a href="{{ item.id }}.html" class="text-white text-decoration-none">{{ item.title }}</a>
+                </h3>
+                <p class="hardware-card-desc">{{ item.summary }}</p>
+                <div class="mt-auto pt-2 border-top border-secondary border-opacity-25">
+                  <a href="{{ item.id }}.html" class="btn btn-sm btn-ddmms-primary text-decoration-none w-100 text-center">
+                    <i class="bi bi-book me-1"></i> Read Documentation
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="text-center mt-3">
+          <a href="hardware.html" class="btn btn-ddmms-outline text-decoration-none">
+            <i class="bi bi-grid me-1"></i> Explore All Hardware Carriers &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parallax Divider 2 -->
+    <div class="parallax-band parallax-window" data-parallax-speed="0.38">
+      <div class="parallax-bg" style="background-image: url('{{ site.dividers.after_hardware.bg_image_webp or "pics/3d-front-1-54.png" }}');"></div>
+    </div>
+
+    <!-- Quick Navigation Hub -->
+    <section class="section-block reveal-section">
+      <div class="container">
+        <div class="section-header" style="--section-accent: #fbbf24;">
+          <h2 class="section-title">
+            <span class="section-title-highlight" style="color: #fbbf24;">Ecosystem</span> <span class="text-white">Directory</span>
+          </h2>
+          <p class="text-secondary mb-2">Dedicated sections for ESPHome edge nodes, Home Assistant automations, and build guides</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="surface-card text-center p-4 h-100 d-flex flex-column">
+              <div class="card-icon-badge mx-auto" style="background: rgba(251, 191, 36, 0.12); color: #fbbf24; border-color: rgba(251, 191, 36, 0.3);">
+                <i class="bi bi-broadcast-pin"></i>
+              </div>
+              <h3 class="h5 text-white mb-2">ESPHome 41-Node Fleet</h3>
+              <p class="small text-secondary mb-3 flex-grow-1">Production catalog of 41 nodes across rooms, e-paper display drivers, partial refresh logic, and YAML configs.</p>
+              <a href="esphome.html" class="btn btn-sm btn-ddmms-outline text-decoration-none mt-auto">
+                <i class="bi bi-arrow-right me-1"></i> 3 Fleet Guides
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="surface-card text-center p-4 h-100 d-flex flex-column">
+              <div class="card-icon-badge mx-auto" style="background: rgba(56, 189, 248, 0.12); color: #38bdf8; border-color: rgba(56, 189, 248, 0.3);">
+                <i class="bi bi-house-gear"></i>
+              </div>
+              <h3 class="h5 text-white mb-2">Home Assistant &amp; Blueprints</h3>
+              <p class="small text-secondary mb-3 flex-grow-1">Central coordination server, encrypted API stream, and 10 production automation blueprints for ventilation, lux, and remotes.</p>
+              <a href="homeassistant.html" class="btn btn-sm btn-ddmms-outline text-decoration-none mt-auto">
+                <i class="bi bi-arrow-right me-1"></i> 2 HA Modules
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="surface-card text-center p-4 h-100 d-flex flex-column">
+              <div class="card-icon-badge mx-auto" style="background: rgba(244, 114, 182, 0.12); color: #f472b6; border-color: rgba(244, 114, 182, 0.3);">
+                <i class="bi bi-journal-code"></i>
+              </div>
+              <h3 class="h5 text-white mb-2">Hardware &amp; Build Guides</h3>
+              <p class="small text-secondary mb-3 flex-grow-1">Assembly steps, component placement, pinout reference matrices, and initial USB-C / wireless OTA deployment tutorials.</p>
+              <a href="guides.html" class="btn btn-sm btn-ddmms-outline text-decoration-none mt-auto">
+                <i class="bi bi-arrow-right me-1"></i> 3 Build Guides
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parallax Divider 3 -->
+    <div class="parallax-band parallax-window" data-parallax-speed="0.38">
+      <div class="parallax-bg" style="background-image: url('{{ site.dividers.after_esphome.bg_image_webp or "pics/pcb-3d-front.png" }}');"></div>
+    </div>
+
+    <!-- Lineup Comparison Preview -->
+    <section class="section-block section-bg-alt reveal-section">
+      <div class="container">
+        <div class="section-header" style="--section-accent: #fb923c;">
+          <h2 class="section-title">
+            <span class="section-title-highlight" style="color: #fb923c;">Hardware</span> <span class="text-white">Comparison Lineup</span>
+          </h2>
+          <p class="text-secondary mb-2">Side-by-side specifications for carrier boards and key fleet node designs</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="specs-table-wrapper table-responsive mb-4">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Model / Node</th>
+                <th>Form Factor</th>
+                <th>Microcontroller</th>
+                <th>Display Interface</th>
+                <th>Sensors &amp; Telemetry</th>
+                <th>Firmware</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in specs['items'][:5] %}
+              <tr>
+                <td class="fw-bold text-white"><a href="{{ row.id }}.html" class="text-info text-decoration-none">{{ row.name }}</a></td>
+                <td><span class="mlego-badge">{{ row.layout }}</span></td>
+                <td class="small text-secondary">{{ row.mcu }}</td>
+                <td class="small text-light">{{ row.display }}</td>
+                <td class="small text-light">{{ row.sensors }}</td>
+                <td><span class="badge bg-dark text-success border border-success border-opacity-25">{{ row.firmware }}</span></td>
+                <td>
+                  <a href="{{ row.id }}.html" class="btn btn-sm btn-ddmms-outline py-1 px-2 text-decoration-none">
+                    <i class="bi bi-file-text me-1"></i> View Page
+                  </a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="text-center">
+          <a href="specs.html" class="btn btn-ddmms-outline text-decoration-none">
+            <i class="bi bi-table me-1"></i> View Full Comparison Matrix &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parallax Divider 4 -->
+    <div class="parallax-band parallax-window" data-parallax-speed="0.38">
+      <div class="parallax-bg" style="background-image: url('{{ site.dividers.after_specs.bg_image_webp or "pics/pcb-3d-back.png" }}');"></div>
+    </div>
+  </main>
+{% endblock %}
