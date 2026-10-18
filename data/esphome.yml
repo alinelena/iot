@@ -32,3 +32,4 @@ items:
     firmware: ESPHome Production
     image: pics/schematic-rev3.svg
     summary: Battle-tested ESPHome configurations with encrypted API, SNTP time synchronization, deep sleep, and failover captive portal.
+

@@ -190,8 +190,8 @@ def build_site(outdir: Path):
     # 6. Render Catalog Pages
     catalog_tpl = env.get_template("catalog.html")
     catalog_configs = [
-        ("hardware", "Hardware Carriers", "Custom KiCad sensor carrier boards sized for standard LEGO plate footprints", hardware_data["items"], "#6cb670"),
-        ("esphome", "ESPHome Fleet", "Production catalog of 41 nodes across rooms, e-paper display drivers, and YAML configurations", esphome_data["items"], "#fbbf24"),
+        ("hardware", "Hardware", "Custom KiCad sensor carrier boards sized for standard LEGO plate footprints", hardware_data["items"], "#6cb670"),
+        ("esphome", "ESPHome", "Production catalog of 41 nodes across rooms, e-paper display drivers, and YAML configurations", esphome_data["items"], "#fbbf24"),
         ("homeassistant", "Home Assistant Hub", "Central coordination server, encrypted API stream, and 10 production automation blueprints", homeassistant_data["items"], "#38bdf8"),
         ("guides", "Hardware & Build Guides", "Assembly guides, component placement, pinout matrices, and OTA deployment workflows", guides_data["items"], "#f472b6"),
     ]
@@ -212,8 +212,8 @@ def build_site(outdir: Path):
     # 7. Render Detail Pages (content sourced directly from notes/<item.file>)
     detail_tpl = env.get_template("detail.html")
     detail_configs = [
-        (hardware_data["items"], "Hardware Carriers", "hardware.html", "hardware", "#6cb670"),
-        (esphome_data["items"], "ESPHome Fleet", "esphome.html", "esphome", "#fbbf24"),
+        (hardware_data["items"], "Hardware", "hardware.html", "hardware", "#6cb670"),
+        (esphome_data["items"], "ESPHome", "esphome.html", "esphome", "#fbbf24"),
         (homeassistant_data["items"], "Home Assistant Hub", "homeassistant.html", "homeassistant", "#38bdf8"),
         (guides_data["items"], "Build Guides", "guides.html", "guides", "#f472b6"),
     ]

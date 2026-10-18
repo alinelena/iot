@@ -36,10 +36,6 @@ menu:
     url: '#guides'
     icon: bi-journal-code
     color: '#f472b6'
-  - name: Specs
-    url: '#specs'
-    icon: bi-table
-    color: '#fb923c'
 dividers:
   after_hero:
     bg_image_webp: pics/pcb-rev-3.png
@@ -85,3 +81,4 @@ social:
     url: https://ddmms.elena.re
     color: '#48b2b3'
 copyright: Copyright © 2024–2026 Alin M. Elena. All rights reserved.
+

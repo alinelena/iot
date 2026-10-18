@@ -27,3 +27,4 @@ manifesto:
     - Robust 41-node ESPHome fleet running on ESP32-C3, C6, S3, ESP8266, and ESP8285 with zero cloud lock-in.
   what_it_is_not: >-
     This ecosystem is built entirely on local processing and open standards, rejecting proprietary walled gardens and closed clouds. Hardware and firmware are modular, repairable, and customizable down to every trace and line of YAML.
+

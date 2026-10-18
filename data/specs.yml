@@ -91,3 +91,4 @@ items:
     features: Visual status beacon, doorbell chime alert, smart home mode indicator
     power: USB-C 5V
     firmware: ESPHome Native API
+

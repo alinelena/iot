@@ -32,3 +32,4 @@ items:
     firmware: Web Serial & Encrypted OTA
     image: pics/pcb-rev-3.png
     summary: Initial USB-C flashing workflows, Web Serial browser console, and automated wireless OTA deployment across 41 production nodes.
+
